@@ -109,7 +109,7 @@ def main():
     # Initialize Model
     # ----------------------
     input_size = dataset.num_features
-    model = DigitMLP(input_size=input_size, num_classes=10)
+    model = DigitMLP(input_dim=input_size, num_classes=10)
     model.to(device)
 
     # ----------------------
