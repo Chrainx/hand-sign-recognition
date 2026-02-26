@@ -66,3 +66,7 @@ class DigitsCSVDataset(Dataset):
         x = torch.tensor(self.features[idx], dtype=torch.float32)
         y = torch.tensor(self.labels[idx], dtype=torch.long)
         return x, y
+    
+    @property
+    def num_features(self) -> int:
+        return self.features.shape[1]

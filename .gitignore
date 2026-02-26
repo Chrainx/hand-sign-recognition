@@ -209,3 +209,7 @@ __marimo__/
 # ML datasets
 data/raw/*
 !data/raw/.gitkeep
+
+# Trained model artifacts
+models/*.pth
+models/*.pt
