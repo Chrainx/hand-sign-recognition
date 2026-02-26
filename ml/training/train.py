@@ -3,7 +3,7 @@ import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader
 
-from ml.training.dataset_digits import DigitsDataset
+from ml.training.dataset_digits import DigitsCSVDataset, DigitsDatasetConfig
 from ml.training.model_mlp import DigitMLP
 from ml.training.split import stratified_split
 
@@ -94,7 +94,11 @@ def main():
     # ----------------------
     # Load Dataset
     # ----------------------
-    dataset = DigitsDataset("data/raw/digits_dataset.csv")
+    dataset_config = DigitsDatasetConfig(
+        csv_path="data/raw/digits_dataset.csv"
+    )
+
+    dataset = DigitsCSVDataset(dataset_config)
 
     train_dataset, val_dataset = stratified_split(dataset)
 
